@@ -10,7 +10,7 @@ symbols = ['AAPL', 'GOOG', 'MSFT', 'AMZN']
 # Define function to get historical data from Alpha Vantage
 def get_historical_data(symbol):
     url = f'https://www.alphavantage.co/query?function=TIME_SERIES_DAILY_ADJUSTED&symbol={symbol}&outputsize=full&apikey={api_key}'
-    response = requests.get(url, proxies={'http': 'http://pyy261:26IamTHEbest!@proxy.ha.org.hk:8080', 'https': 'https://pyy261:26IamTHEbest!@proxy.ha.org.hk:8080'})
+    response = requests.get(url, proxies={'http': 'http://pyy261:26IamTHEbest!@proxy.ha.org.hk:8080', 'https': 'http://pyy261:26IamTHEbest!@proxy.ha.org.hk:8080'})
     data = response.json()['Time Series (Daily)']
     df = pd.DataFrame(data).T
     df.index = pd.to_datetime(df.index)
